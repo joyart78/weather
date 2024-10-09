@@ -1,0 +1,408 @@
+/* Reset and base styles  */
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+ul, ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}
+
+/*-----------------------------*/
+body{
+    background-color: #efefef;
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    margin: 0 auto;
+}
+.today_weather{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-height: 100%;
+    width: 350px;
+    max-width: 400px;
+    gap: 24px;
+    padding: 30px;
+    border-radius: 10px;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding-top: 10px;
+}
+.search_input{
+    border-radius: 15px;
+    height: 30px;
+    background-color: #efefef;
+    padding-left: 5px;
+}
+.input_btn{
+    border-radius: 50%;
+    background-color: #efefef;
+    height: 30px;
+    width: 30px;
+}
+.today_degrees{
+    display: flex;
+    flex-direction: column;
+}
+.weather_img{
+    height: 300px;
+    width: 300px;
+}
+.degrees_data{
+    font-size: 80px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    margin: 0;
+}
+.degrees{
+    font-size: 50px;
+    vertical-align: super;
+}
+.today_current_day{
+    font-weight: bold;
+}
+.today_current_time{
+    color: #a6a6a8;
+}
+.today_day{
+    padding-bottom: 40px;
+    border-bottom: solid 1px #efefef;
+    font-size: 20px;
+}
+.today_detail{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.today_city{
+    background-color: #e2e2e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.weather_description{
+    font-size: 18px;
+}
+.city{
+    color: white;
+    font-size: 20px;
+    background-color: rgba(59, 59, 59, 0.3);
+}
+.highlights_container{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 50px 0 50px;
+    gap: 50px;
+}
+.weather_time{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.weather_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    height: 128px;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+}
+.card_icon{
+    height: 30px;
+    width: 30px;
+}
+.highlights__heading{
+    font-weight: bold;
+    font-size: 24px;
+}
+.highlights__card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+}
+.min_max_card {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.wind_card {
+    grid-area: 1 / 2 / 2 / 3;
+
+}
+.sunset_sunrise_card {
+    grid-area: 1 / 3 / 2 / 4;
+}
+.humidity_card {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.visibility_card {
+    grid-area: 2 / 2 / 3 / 3;
+}
+.pressure_card {
+    grid-area: 2 / 3 / 3 / 4;
+}
+.highlights__card_title{
+    color: #a6a6a8;
+    font-size: 18px;
+    padding-bottom: 30px;
+}
+.card_text{
+    font-size: 45px;
+}
+.sunrise, .sunset, .max_temp_card, .min_temp_card{
+    font-size: 24px;
+}
+.max_temp_card{
+    padding-bottom: 20px;
+}
+.min_temp_card{
+    color: #a6a6a8;
+}
+.highlights{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.hidden, .hidden_modal{
+    visibility: hidden;
+}
+.wind_img{
+    height: 60px;
+    width: 60px;
+}
+.wind__title{
+    display: flex;
+    flex-direction: row;
+}
+.sunrise__card, .sunset__card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.sunrise__card{
+    padding-bottom: 20px;
+}
+.sunset_sunrise_img{
+    height: 25px;
+    width: 25px;
+}
+
+
+
+/*модальное окно*/
+.modal_search{
+    position: fixed;
+    width: 1200px;
+    height: 100%;
+}
+.modal__content{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 100px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+.modal__title{
+    font-size: 24px;
+}
+.modal__search_input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+.modal__input{
+    padding: 0 0 0 5px;
+    height: 30px;
+    background-color: #efefef;
+    border-radius: 10px;
+}
+.modal__btn{
+    background-color: #efefef;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+/*ошибка*/
+
+.error-message {
+    display: block;
+    height: 100%;
+    padding: 15px;
+    left: 50%;
+    top: 20px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.error-message.show {
+    transform: scale(1) translateY(0);
+}
+
+.error-message {
+    transform: scale(0.5) translateY(-20px);
+}
+
+
+/*footer*/
+.footer__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+.footer_text{
+    padding:2px 5px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

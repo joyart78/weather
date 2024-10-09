@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+<body>
+<main class="main">
+    <div class="main__container container">
+        <div class="error-message">
+            Город не найден!
+        </div>
+        <section class="modal_search hidden_modal">
+            <div class="modal__content">
+                <p class="modal__title">погода</p>
+                <div class="modal__search_input">
+                    <input class="modal__input" type="text" placeholder="Search for places...">
+                    <button class="modal__btn"><img src="./images/search_icon.svg" alt="search"></button>
+                </div>
+            </div>
+        </section>
+        <section class="today_weather hidden">
+            <div class="search">
+                <input class="search_input" type="text" placeholder="Search for places...">
+                <button class="input_btn"><img src="./images/search_icon.svg" alt="search"></button>
+            </div>
+            <div class="today_degrees">
+                <img src="./images/CLEAR.svg" class="weather_img">
+                <div class="degrees_data">
+                    <span class="degrees_mean">
+                    </span>
+                </div>
+                <div class="today_day">
+                    <span class="today_current_day"></span>
+                    <span class="today_current_time"></span>
+                </div>
+            </div>
+            <div class="today_detail">
+                <p class="weather_description"></p>
+                <div class="today_city">
+                    <span class="city"></span>
+                </div>
+            </div>
+        </section>
+        <section class="today_highlights hidden">
+            <div class="highlights_container">
+                <div class="weather_time">
+                </div>
+                <div class="highlights">
+                    <h2 class="highlights__heading">
+                        Today`s Highlights
+                    </h2>
+                    <div class="highlights__card">
+                        <article class="min_max_card card">
+                            <h1 class="highlights__card_title">
+                                Min & Max Temp.
+                            </h1>
+                            <span class="max_temp_card card_text">
+                            </span>
+                            <span class="min_temp_card card_text">
+                            </span>
+                        </article>
+                        <article class="wind_card card">
+                            <h1 class="highlights__card_title">
+                                Wind
+                            </h1>
+                            <span class="wind card_text">
+                            </span>
+                        </article>
+                        <article class="sunset_sunrise_card card">
+                            <h1 class="highlights__card_title">
+                                Sunrise & Sunset
+                            </h1>
+                            <div class="sunrise__card">
+                                <img src="./images/weather_sunrise_morning_icon.svg" class="sunset_sunrise_img">
+                                <span class="sunrise card_text">
+                                </span>
+                            </div>
+                            <div class="sunset__card">
+                                <img src="./images/weather_sunset_evening_icon.svg" class="sunset_sunrise_img">
+                                <span class="sunset card_text">
+                                </span>
+                            </div>
+                        </article>
+                        <article class="humidity_card card">
+                            <h1 class="highlights__card_title">
+                                Humidity
+                            </h1>
+                            <span class="humidity card_text">
+                            </span>
+                        </article>
+                        <article class="visibility_card card">
+                            <h1 class="highlights__card_title">
+                                Visibility
+                            </h1>
+                            <span class="visibility card_text">
+                            </span>
+                        </article>
+                        <article class="pressure_card card">
+                            <h1 class="highlights__card_title">
+                                Pressure
+                            </h1>
+                            <span class="pressure card_text">
+                            </span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<script src="index.js"></script>
+</body>
+</html>
