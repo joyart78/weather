@@ -70,7 +70,6 @@ async function checkWeather(city){
             let photo = await getPhotos(data)
 
             if (photo){
-                // document.querySelector('.today_city').style.backgroundColor = ''
                 document.querySelector('.today_city').style.backgroundImage = `url('${photo}')`
             }
 
