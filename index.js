@@ -79,7 +79,7 @@ async function checkWeather(city){
                     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
                     let data = await response.json()
                     let days = Object.values(data.list).slice(1,7)
-                    console.log(days)
+                    document.querySelector('.weather_time').innerHTML = ''
                     days.forEach( daysKey =>  {
                         const date = new Date(daysKey.dt * 1000)
                         const img = getImg[daysKey.weather[0].icon];
