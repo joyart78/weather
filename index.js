@@ -66,18 +66,7 @@ async function checkWeather(city){
             document.querySelector('.humidity').innerHTML = data.main.humidity + '%'
             document.querySelector('.visibility').innerHTML = data.visibility / 1000 + ' km'
             document.querySelector('.pressure').innerHTML = data.main.pressure + '<span class="min_temp_card">hPa</span>'
-            const getPhotos = async (weather) => {
-                try {
-                    const response = await fetch(`https://api.unsplash.com/photos/random/?client_id=${USER_ID}&count=1&query=${weather.name}, city, ${weather.weather.main}`)
-                    const data = await response.json()
-                    if (response.status === 200 && data.length){
-                        const urlPhoto = data[0].urls.small
-                        return urlPhoto
-                    }
-                } catch (err){
-                    throw new Error(err)
-                }
-            }
+
             let photo = await getPhotos(data)
 
             if (photo){
@@ -152,6 +141,19 @@ searchBtn.addEventListener('click', () => {
     }
 })
 
+const getPhotos = async (weather) => {
+    try {
+        const response = await fetch(`https://api.unsplash.com/photos/random/?client_id=${USER_ID}&count=1&query=${weather.name}, city, ${weather.weather.main}`)
+        const data = await response.json()
+        if (response.status === 200 && data.length){
+            const urlPhoto = data[0].urls.small
+            return urlPhoto
+        }
+    } catch (err){
+        throw new Error(err)
+    }
+}
+
 function showHidden()   {
     const hiden = document.querySelectorAll('.hidden')
     const start = document.querySelector('.modal_search')
@@ -173,7 +175,8 @@ if (localStorage.length){
     showHidden()
     checkWeather(localStorage.key(0))
 } else {
-    document.querySelector('.hidden').classList.remove('hidden')
+    document.querySelector('.hidden').classList.add('hidden')
+    document.querySelector('.hidden_modal').classList.remove('hidden_modal')
 }
 
 
